@@ -22,8 +22,37 @@
     }
 
     h1 {
-      font-size: 6rem;
+      font-size: 8rem;
       font-weight: bold;
+      border-right: 0.1em solid white;
+      margin: 0 auto;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: 
+        typing 2s steps(15, end), 
+        blink-caret 0.75s step-end infinite;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes typing {
+      from { 
+        width: 0;
+        border-right-color: white;
+      }
+      to { 
+        width: 1120px;
+        border-right-color: transparent;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 420px }
+      }
     }
 
     .contact-button {
@@ -51,6 +80,6 @@
 <body>
   <div class="logo">t51 AI</div>
   <h1>Coming Soon...</h1>
-  <a href="#" class="contact-button">Contact</a>
+  <a href="mailto:jonah@t51.ai?subject=Contact&body=Hi%2C%20I%20would%20like%20to%20learn%20more%20about%20t51" class="contact-button">Contact</a>
 </body>
 </html>
