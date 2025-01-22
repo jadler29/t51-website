@@ -30,15 +30,16 @@
       margin: 0 auto;
       white-space: nowrap;
       overflow: hidden;
-      opacity: 0; /* Start hidden */
+      opacity: 1; /* Start visible by default */
+      width: min(1400px, 90vw); /* Default width */
     }
 
     .animate-typing {
       opacity: 1;
+      width: 0; /* Start from 0 width when animating */
       animation: 
-        typing 2s steps(15, end), 
+        typing 2s steps(15, end) forwards, 
         blink-caret 0.75s step-end 3;
-      animation-fill-mode: forwards;
     }
 
     @keyframes typing {
